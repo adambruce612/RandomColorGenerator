@@ -20,7 +20,7 @@ function getLetter() {
 
 function newColor()
 {
-    let backgroundColor = "";
+    let backgroundColor = "#";
     const numbers = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9'];
     const letters = ['a', 'b', 'c', 'd', 'e', 'f'];
 
@@ -35,7 +35,19 @@ function newColor()
             backgroundColor += letters[getLetter()];
         }
     }
-    console.log(backgroundColor);
+    setBackgroundColor(backgroundColor);
+    displayHexCode(backgroundColor.toUpperCase());
 }
 
-document.addEventListener('click', newColor());
+function setBackgroundColor(color)
+{
+    console.log(color);
+    body.style.backgroundColor = color;
+}
+
+function displayHexCode(color)
+{
+    displayHex.innerText = `Hex Code: ${color}`;
+}
+
+document.addEventListener('click', newColor, false);
