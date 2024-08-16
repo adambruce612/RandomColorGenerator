@@ -19,3 +19,13 @@ p {
     border: 2px solid black;
 }
 
+.wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+button {
+    width: 100px;
+    margin-top: 20px;
+}

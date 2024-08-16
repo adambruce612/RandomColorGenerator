@@ -1,23 +1,28 @@
 const displayHex = document.getElementById("display-hex");
-let body = document.querySelector("body");
+const copyBtn = document.getElementById("copy-btn");
+const body = document.querySelector("body");
 
 // Function to get a random number
 function randomNum(num) {
     return Math.floor(Math.random() * num);
 }
 
+// Returns a 0 or 1 to decide if to use number or letter array
 function numOrLetter() {
     return randomNum(2);
 }
 
+// Returns a random number from the numbers array
 function getNumber() {
     return randomNum(10);
 }
 
+// Returns a random letter from the letters array
 function getLetter() {
     return randomNum(6);
 }
 
+// Creates random hex code number and calls setBackground function and displayHexCode function
 function newColor()
 {
     let backgroundColor = "#";
@@ -50,4 +55,12 @@ function displayHexCode(color)
     displayHex.innerText = `Hex Code: ${color}`;
 }
 
+function copyHexCode() {
+    navigator.clipboard.writeText(displayHex.value);
+}
+
 document.addEventListener('click', newColor, false);
+
+copyBtn.addEventListener('click', function(Event) {
+    Event.stopPropagation();
+});
