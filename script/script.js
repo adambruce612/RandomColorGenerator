@@ -1,6 +1,7 @@
 const displayHex = document.getElementById("display-hex");
 const copyBtn = document.getElementById("copy-btn");
 const body = document.querySelector("body");
+let backgroundColor = "#";
 
 // Function to get a random number
 function randomNum(num) {
@@ -25,7 +26,7 @@ function getLetter() {
 // Creates random hex code number and calls setBackground function and displayHexCode function
 function newColor()
 {
-    let backgroundColor = "#";
+    backgroundColor = "#";
     const numbers = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9'];
     const letters = ['a', 'b', 'c', 'd', 'e', 'f'];
 
@@ -53,10 +54,6 @@ function setBackgroundColor(color)
 function displayHexCode(color)
 {
     displayHex.innerText = `Hex Code: ${color}`;
-}
-
-function copyHexCode() {
-    navigator.clipboard.writeText(displayHex.value);
 }
 
 document.addEventListener('click', newColor, false);
