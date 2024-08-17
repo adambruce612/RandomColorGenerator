@@ -1,7 +1,7 @@
 const displayHex = document.getElementById("display-hex");
 const copyBtn = document.getElementById("copy-btn");
 const body = document.querySelector("body");
-let backgroundColor = "#";
+let backgroundColor = "#EDAE49";
 
 // Function to get a random number
 function randomNum(num) {
@@ -60,4 +60,9 @@ document.addEventListener('click', newColor, false);
 
 copyBtn.addEventListener('click', function(Event) {
     Event.stopPropagation();
+    navigator.clipboard.writeText(backgroundColor.toUpperCase());
+    copyBtn.innerText = 'Copied!';
+    setTimeout(() => {
+        copyBtn.innerText = 'Copy Hex Code';
+    }, 1000);
 });
