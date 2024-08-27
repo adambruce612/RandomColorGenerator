@@ -32,3 +32,9 @@ button {
     font-size: 15px;
 }
 
+button:hover {
+    border-radius: 20px;
+    font-weight: bold;
+}
+
+
